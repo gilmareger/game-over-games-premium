@@ -10,88 +10,162 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="override.css" />
 </head>
 <body>
-  <div class="noise"></div><div class="cursor-glow"></div><div class="scroll-progress" id="scrollProgress"></div>
+  <div class="scroll-progress" id="scrollProgress"></div>
+  <div class="noise"></div>
   <header class="nav" id="nav">
-    <a class="brand" href="#inicio"><img src="assets/logo.jpg" alt="Game Over Games"><span>GAME <b>OVER</b> GAMES</span></a>
-    <nav><a href="#disponiveis">Disponíveis</a><a href="#configurador">Monte seu PC</a><a href="#servicos">Serviços</a><a href="#provas">Entregas</a></nav>
-    <a class="btn btn-small whatsapp" data-message="Olá! Vim pelo site da Game Over Games e quero consultar disponibilidade.">Consultar agora</a>
+    <a class="brand" href="#inicio" aria-label="Game Over Games">
+      <span>GAME</span><b>OVER</b><span>GAMES</span>
+    </a>
+    <nav class="nav-links" aria-label="Navegação principal">
+      <a href="#produtos">Produtos</a><a href="#pc">Monte seu PC</a><a href="#servicos">Serviços</a><a href="#contato">Contato</a>
+    </nav>
+    <a class="btn btn-small" href="https://wa.me/554796253895?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Game%20Over%20Games%20e%20quero%20consultar%20a%20disponibilidade." target="_blank" rel="noopener">Consultar no WhatsApp</a>
   </header>
 
   <main>
-    <section class="hero section" id="inicio">
-      <div class="hero-grid"></div><div class="orb orb-one"></div><div class="orb orb-two"></div>
+    <section class="hero section-grid" id="inicio">
+      <div class="orb orb-one"></div><div class="orb orb-two"></div>
       <div class="hero-copy reveal">
-        <span class="eyebrow">Timbó e região · tecnologia com garantia</span>
-        <h1>Seu próximo nível <em>começa aqui.</em></h1>
-        <p>PCs gamer, consoles, jogos, periféricos e manutenção com atendimento local, orientação e entrega na região.</p>
-        <div class="hero-actions"><a href="#escolha" class="btn">Encontrar meu equipamento</a><a href="#disponiveis" class="btn secondary">Ver disponíveis agora</a></div>
-        <div class="trust-row"><span>✓ Produtos testados</span><span>✓ Garantia informada</span><span>✓ Parcelamento disponível</span></div>
+        <span class="eyebrow">TIMBÓ E REGIÃO</span>
+        <h1>Seu próximo nível<br><em>começa aqui.</em></h1>
+        <p>PCs gamer, consoles, jogos, periféricos e manutenção com garantia, parcelamento e entrega regional.</p>
+        <div class="hero-actions">
+          <a class="btn pulse" href="#produtos">Ver disponibilidade</a>
+          <a class="btn btn-ghost" href="https://wa.me/554796253895?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Game%20Over%20Games%20e%20gostaria%20de%20atendimento." target="_blank" rel="noopener">Falar no WhatsApp</a>
+        </div>
+        <div class="quick-choice reveal" aria-label="Escolha rápida">
+          <span class="quick-label">O que você procura?</span>
+          <div class="quick-grid">
+            <a href="https://wa.me/554796253895?text=Ol%C3%A1%21%20Quero%20montar%20um%20PC%20gamer." target="_blank">Montar um PC</a>
+            <a href="https://wa.me/554796253895?text=Ol%C3%A1%21%20Quero%20consultar%20um%20console." target="_blank">Comprar console</a>
+            <a href="https://wa.me/554796253895?text=Ol%C3%A1%21%20Quero%20fazer%20upgrade%20no%20meu%20PC." target="_blank">Fazer upgrade</a>
+            <a href="https://wa.me/554796253895?text=Ol%C3%A1%21%20Preciso%20de%20manuten%C3%A7%C3%A3o%20em%20um%20equipamento." target="_blank">Consertar</a>
+            <a href="#estoque">Ver disponíveis</a>
+          </div>
+        </div>
+        <div class="trust-row">
+          <span>✓ Garantia</span><span>▣ Parcelamento</span><span>➜ Entrega regional</span>
+        </div>
       </div>
-      <div class="hero-stage reveal tilt" data-tilt="10">
-        <div class="stage-ring"></div><img class="main-product" src="assets/pc-black.jpg" alt="PC gamer Game Over Games">
-        <div class="floating-card card-ps5"><img src="assets/ps5.jpg" alt="PS5"><span>Nova geração</span></div>
-        <div class="floating-card card-wheel"><img src="assets/wheel.jpg" alt="Volante gamer"><span>Experiência completa</span></div>
-        <div class="spec-chip chip-one">RGB CONTROL</div><div class="spec-chip chip-two">READY TO PLAY</div>
+
+      <div class="hero-stage tilt" data-tilt="10">
+        <div class="tech-lines"></div>
+        <div class="stage-floor"></div>
+        <figure class="hero-main glass-card">
+          <img src="assets/pc-black.jpg" alt="PC gamer com iluminação RGB" />
+        </figure>
+        <figure class="float-card card-a"><img src="assets/ps5.jpg" alt="PlayStation 5" /></figure>
+        <figure class="float-card card-b"><img src="assets/wheel.jpg" alt="Volante gamer" /></figure>
+        <div class="spec-chip chip-a">RGB CONTROL</div><div class="spec-chip chip-b">READY TO PLAY</div>
+      </div>
+      <a class="scroll-cue" href="#produtos" aria-label="Rolar para produtos"><span></span></a>
+    </section>
+
+    <section class="products section-grid" id="produtos">
+      <header class="section-heading reveal">
+        <span class="eyebrow">ESCOLHA SUA CATEGORIA</span>
+        <h2>Tecnologia para jogar, criar e evoluir.</h2>
+      </header>
+      <div class="category-grid">
+        <article class="category-card wide reveal tilt" data-tilt="6">
+          <img src="assets/pc-white-1.jpg" alt="PC gamer branco" />
+          <div class="card-overlay"><span>PC GAMER</span><h3>Desempenho sob medida</h3><a href="#pc">Montar configuração →</a></div>
+        </article>
+        <article class="category-card reveal tilt" data-tilt="6">
+          <img src="assets/ps4.jpg" alt="PlayStation 4" />
+          <div class="card-overlay"><span>CONSOLES</span><h3>PS4, PS5 e Xbox</h3><a href="https://wa.me/554796253895?text=Ol%C3%A1%21%20Quero%20consultar%20consoles%20dispon%C3%ADveis." target="_blank">Consultar →</a></div>
+        </article>
+        <article class="category-card reveal tilt" data-tilt="6">
+          <img src="assets/oculus.jpg" alt="Oculus VR" />
+          <div class="card-overlay"><span>REALIDADE VIRTUAL</span><h3>Experiências imersivas</h3><a href="https://wa.me/554796253895?text=Ol%C3%A1%21%20Quero%20consultar%20op%C3%A7%C3%B5es%20de%20realidade%20virtual." target="_blank">Ver opções →</a></div>
+        </article>
+        <article class="category-card reveal tilt" data-tilt="6">
+          <img src="assets/wheel.jpg" alt="Acessórios gamer" />
+          <div class="card-overlay"><span>PERIFÉRICOS</span><h3>Controle total</h3><a href="https://wa.me/554796253895?text=Ol%C3%A1%21%20Quero%20consultar%20perif%C3%A9ricos%20e%20acess%C3%B3rios." target="_blank">Ver acessórios →</a></div>
+        </article>
+        <article class="category-card wide reveal tilt" data-tilt="6">
+          <img src="assets/pc-white-2.jpg" alt="Setup gamer completo" />
+          <div class="card-overlay"><span>SETUPS</span><h3>Pronto para ligar e jogar</h3><a href="https://wa.me/554796253895?text=Ol%C3%A1%21%20Quero%20consultar%20setups%20dispon%C3%ADveis." target="_blank">Consultar disponibilidade →</a></div>
+        </article>
       </div>
     </section>
 
-    <section class="section compact" id="escolha">
-      <div class="section-head reveal"><span class="eyebrow">Escolha seu caminho</span><h2>O que você procura hoje?</h2><p>Selecione uma opção e fale com a equipe já com sua necessidade identificada.</p></div>
-      <div class="choice-grid">
-        <a class="choice-card reveal whatsapp" data-message="Olá! Vim pelo site e quero montar um PC gamer. Pode me ajudar a escolher a configuração ideal?"><span>01</span><strong>Montar um PC gamer</strong><small>Configuração conforme jogos e orçamento.</small></a>
-        <a class="choice-card reveal whatsapp" data-message="Olá! Vim pelo site e quero consultar consoles disponíveis, valores e condições."><span>02</span><strong>Comprar um console</strong><small>PS4, PS5, Xbox e acessórios.</small></a>
-        <a class="choice-card reveal whatsapp" data-message="Olá! Vim pelo site e quero avaliar um upgrade para meu computador atual."><span>03</span><strong>Fazer um upgrade</strong><small>Mais desempenho sem trocar tudo.</small></a>
-        <a class="choice-card reveal whatsapp" data-message="Olá! Vim pelo site e preciso de avaliação ou manutenção no meu equipamento."><span>04</span><strong>Consertar equipamento</strong><small>Diagnóstico, limpeza e manutenção.</small></a>
+
+    <section class="stock section-grid" id="estoque">
+      <header class="section-heading reveal"><span class="eyebrow">DISPONÍVEIS NESTA SEMANA</span><h2>Escolha. Consulte. Jogue.</h2></header>
+      <div class="stock-grid">
+        <article class="stock-card reveal tilt" data-tilt="5"><img src="assets/pc-white-1.jpg" alt="PC gamer branco"><div><span class="status">Disponível agora</span><h3>PC Gamer</h3><p>Novo • Garantia informada</p><strong>Consulte disponibilidade</strong><a class="btn" target="_blank" href="https://wa.me/554796253895?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20PC%20Gamer%20dispon%C3%ADvel%20nesta%20semana.">Consultar este produto</a></div></article>
+        <article class="stock-card reveal tilt" data-tilt="5"><img src="assets/ps5.jpg" alt="PlayStation 5"><div><span class="status">Disponível agora</span><h3>PlayStation 5</h3><p>Novo • Garantia informada</p><strong>Consulte disponibilidade</strong><a class="btn" target="_blank" href="https://wa.me/554796253895?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20PlayStation%205%20dispon%C3%ADvel.">Consultar este produto</a></div></article>
+        <article class="stock-card reveal tilt" data-tilt="5"><img src="assets/ps4.jpg" alt="PlayStation 4"><div><span class="status">Revisado e testado</span><h3>PlayStation 4</h3><p>Seminovo • Garantia informada</p><strong>Consulte disponibilidade</strong><a class="btn" target="_blank" href="https://wa.me/554796253895?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20PlayStation%204%20revisado%20e%20testado.">Consultar este produto</a></div></article>
       </div>
     </section>
 
-    <section class="section" id="disponiveis">
-      <div class="section-head reveal"><span class="eyebrow">Disponíveis nesta semana</span><h2>Encontre sua próxima máquina</h2><p>Consulte estoque, valores e condições atualizadas diretamente com a equipe.</p></div>
-      <div class="product-grid">
-        <article class="product-card reveal tilt"><div class="product-image"><img src="assets/pc-black.jpg" alt="PC gamer preto"><span class="badge">PC Gamer</span></div><div class="product-info"><h3>PC Gamer Performance</h3><p>Configuração personalizada para jogar, trabalhar e evoluir.</p><ul><li>Novo</li><li>Garantia informada</li><li>Pronto para personalizar</li></ul><a class="btn full whatsapp" data-message="Olá! Tenho interesse no PC Gamer Performance mostrado no site. Gostaria de consultar configuração, valor e condições.">Consultar este PC</a></div></article>
-        <article class="product-card reveal tilt"><div class="product-image"><img src="assets/ps5.jpg" alt="PlayStation 5"><span class="badge">Console</span></div><div class="product-info"><h3>PlayStation 5</h3><p>Nova geração para quem busca velocidade, catálogo e imersão.</p><ul><li>Consulte disponibilidade</li><li>Parcelamento disponível</li><li>Entrega na região</li></ul><a class="btn full whatsapp" data-message="Olá! Tenho interesse no PlayStation 5 mostrado no site. Gostaria de consultar disponibilidade, valor e condições.">Consultar PS5</a></div></article>
-        <article class="product-card reveal tilt"><div class="product-image"><img src="assets/ps4.jpg" alt="PlayStation 4"><span class="badge">Seminovo</span></div><div class="product-info"><h3>PlayStation 4 + acessórios</h3><p>Excelente custo-benefício com aparelho revisado e testado.</p><ul><li>Seminovo</li><li>Testado antes da entrega</li><li>Consulte opções</li></ul><a class="btn full whatsapp" data-message="Olá! Tenho interesse no PlayStation 4 e acessórios mostrados no site. Gostaria de consultar disponibilidade e condições.">Consultar PS4</a></div></article>
+    <section class="builder section-grid" id="pc">
+      <div class="builder-visual reveal tilt" data-tilt="7"><img src="assets/pc-black.jpg" alt="PC gamer personalizado"><div class="scanner"></div></div>
+      <div class="builder-copy reveal">
+        <span class="eyebrow">PC GAMER SOB MEDIDA</span>
+        <h2>A máquina certa para o seu jogo e orçamento.</h2>
+        <div class="steps">
+          <div><b>01</b><span><strong>Objetivo</strong><small>Jogos, resolução e uso.</small></span></div>
+          <div><b>02</b><span><strong>Orçamento</strong><small>Faixa de investimento real.</small></span></div>
+          <div><b>03</b><span><strong>Configuração</strong><small>Componentes equilibrados.</small></span></div>
+          <div><b>04</b><span><strong>Testes e entrega</strong><small>Pronto para usar.</small></span></div>
+        </div>
+        <button class="btn" type="button" id="openBuilder">Montar minha configuração</button>
       </div>
     </section>
 
-    <section class="section configurator" id="configurador">
-      <div class="config-visual reveal"><div class="config-number">60s</div><h2>Descubra seu PC ideal</h2><p>Responda quatro perguntas rápidas e envie sua necessidade organizada para a Game Over.</p><img src="assets/pc-white-1.jpg" alt="PC gamer branco"></div>
-      <form class="config-form reveal" id="pcForm">
-        <label>1. Qual é seu orçamento?<select name="orcamento" required><option value="">Selecione</option><option>Até R$ 3.000</option><option>R$ 3.000 a R$ 5.000</option><option>R$ 5.000 a R$ 8.000</option><option>Acima de R$ 8.000</option><option>Ainda não defini</option></select></label>
-        <label>2. Qual é seu principal uso?<select name="uso" required><option value="">Selecione</option><option>Jogos competitivos</option><option>Jogos em alta qualidade</option><option>Trabalho e estudo</option><option>Streaming e criação</option><option>Uso misto</option></select></label>
-        <label>3. Precisa de periféricos?<select name="perifericos" required><option value="">Selecione</option><option>Somente o computador</option><option>Monitor</option><option>Kit completo</option><option>Ainda quero orientação</option></select></label>
-        <label>4. O que é mais importante?<select name="prioridade" required><option value="">Selecione</option><option>Melhor desempenho possível</option><option>Equilíbrio entre preço e desempenho</option><option>Visual e iluminação RGB</option><option>Facilidade para upgrades futuros</option></select></label>
-        <button class="btn full" type="submit">Receber minha configuração no WhatsApp</button>
-      </form>
-    </section>
-
-    <section class="section dark-panel" id="servicos">
-      <div class="section-head reveal"><span class="eyebrow">Serviços especializados</span><h2>Seu equipamento funcionando como deveria</h2></div>
+    <section class="services section-grid" id="servicos">
+      <header class="section-heading reveal"><span class="eyebrow">SERVIÇOS</span><h2>Mais desempenho. Menos dor de cabeça.</h2></header>
       <div class="service-grid">
-        <article class="service reveal"><b>01</b><h3>Limpeza completa</h3><p>Higienização interna e prevenção contra aquecimento.</p><a class="whatsapp" data-message="Olá! Quero solicitar uma avaliação para limpeza completa do meu equipamento.">Solicitar avaliação →</a></article>
-        <article class="service reveal"><b>02</b><h3>Diagnóstico</h3><p>Identificação de travamentos, falhas e perda de desempenho.</p><a class="whatsapp" data-message="Olá! Meu equipamento está apresentando problemas e gostaria de solicitar um diagnóstico.">Solicitar diagnóstico →</a></article>
-        <article class="service reveal"><b>03</b><h3>Upgrade</h3><p>Melhoria de componentes conforme uso, orçamento e compatibilidade.</p><a class="whatsapp" data-message="Olá! Gostaria de avaliar possibilidades de upgrade para meu computador.">Avaliar upgrade →</a></article>
-        <article class="service reveal"><b>04</b><h3>Montagem personalizada</h3><p>Escolha de peças, montagem, organização e testes.</p><a class="whatsapp" data-message="Olá! Quero solicitar uma montagem personalizada de PC gamer.">Montar meu PC →</a></article>
+        <a class="service-card reveal" target="_blank" href="https://wa.me/554796253895?text=Ol%C3%A1%21%20Meu%20equipamento%20est%C3%A1%20com%20falhas%20e%20quero%20um%20diagn%C3%B3stico."><i>◫</i><h3>Diagnóstico</h3><p>Identificação de falhas e gargalos.</p></a>
+        <a class="service-card reveal" target="_blank" href="https://wa.me/554796253895?text=Ol%C3%A1%21%20Quero%20fazer%20upgrade%20no%20meu%20equipamento."><i>⚙</i><h3>Upgrade</h3><p>Melhoria de peças e desempenho.</p></a>
+        <a class="service-card reveal" target="_blank" href="https://wa.me/554796253895?text=Ol%C3%A1%21%20Quero%20solicitar%20limpeza%20e%20manuten%C3%A7%C3%A3o%20preventiva."><i>✦</i><h3>Limpeza</h3><p>Higienização e manutenção preventiva.</p></a>
+        <a class="service-card reveal" target="_blank" href="https://wa.me/554796253895?text=Ol%C3%A1%21%20Meu%20PC%20est%C3%A1%20lento%20e%20quero%20otimiza%C3%A7%C3%A3o."><i>⌁</i><h3>Otimização</h3><p>Sistema, drivers e ajustes essenciais.</p></a>
       </div>
     </section>
 
-    <section class="section" id="provas">
-      <div class="section-head reveal"><span class="eyebrow">Produtos e experiências</span><h2>Tecnologia para diferentes formas de jogar</h2></div>
-      <div class="gallery">
-        <figure class="large reveal"><img src="assets/pc-white-2.jpg" alt="Setup gamer branco"><figcaption>Setups personalizados</figcaption></figure>
-        <figure class="reveal"><img src="assets/oculus.jpg" alt="Oculus VR"><figcaption>Realidade virtual</figcaption></figure>
-        <figure class="reveal"><img src="assets/wheel.jpg" alt="Volante gamer"><figcaption>Simulação</figcaption></figure>
-        <figure class="wide reveal"><img src="assets/pc-budget.jpg" alt="PC gamer acessível"><figcaption>Opções para diferentes orçamentos</figcaption></figure>
+    <section class="gallery section-grid">
+      <header class="section-heading reveal"><span class="eyebrow">PROVA VISUAL</span><h2>Equipamentos que falam por si.</h2></header>
+      <div class="mosaic">
+        <figure class="m1 reveal"><img src="assets/pc-black.jpg" alt="Setup gamer preto"></figure>
+        <figure class="m2 reveal"><img src="assets/pc-white-1.jpg" alt="Setup gamer branco"></figure>
+        <figure class="m3 reveal"><img src="assets/ps5.jpg" alt="PlayStation 5"></figure>
+        <figure class="m4 reveal"><img src="assets/pc-budget.jpg" alt="Computador gamer"></figure>
       </div>
     </section>
 
-    <section class="section final-cta reveal"><div><span class="eyebrow">Game Over Games</span><h2>Pronto para subir de nível?</h2><p>Conte o que você procura. A equipe ajuda a encontrar a melhor opção para seu objetivo e orçamento.</p></div><a class="btn whatsapp" data-message="Olá! Vim pelo site da Game Over Games e gostaria de ajuda para encontrar o equipamento ideal.">Falar com a Game Over</a></section>
+    <section class="final-cta section-grid" id="contato">
+      <div class="final-panel reveal">
+        <img src="assets/logo.jpg" alt="Logo Game Over Games" />
+        <div><span class="eyebrow">GAME OVER GAMES</span><h2>Pronto para subir de nível?</h2><p>Consulte disponibilidade, condições e entrega para Timbó e região.</p></div>
+        <a class="btn pulse" href="https://wa.me/554796253895?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20quero%20encontrar%20a%20melhor%20op%C3%A7%C3%A3o%20para%20mim." target="_blank">Falar no WhatsApp</a>
+      </div>
+    </section>
   </main>
 
-  <footer><div class="brand"><img src="assets/logo.jpg" alt="Logo"><span>GAME <b>OVER</b> GAMES</span></div><p>PC gamer · PS4 · PS5 · Xbox · jogos · periféricos · manutenção</p><a href="https://www.instagram.com/gameover.games/" target="_blank">@gameover.games</a><small>Timbó e região · Marcas citadas pertencem aos seus respectivos proprietários.</small></footer>
-  <a class="floating-whatsapp whatsapp" id="floatingWhatsapp" data-message="Olá! Vim pelo site da Game Over Games e gostaria de atendimento."><span>◉</span><b>Falar agora</b></a>
+  <footer><div class="brand"><span>GAME</span><b>OVER</b><span>GAMES</span></div><p>PC gamer • PS4 • PS5 • Xbox • manutenção • Timbó e região</p><a href="https://www.instagram.com/gameover.games/" target="_blank">@gameover.games</a></footer>
+  <a class="floating-contact" id="floatingContact" href="https://wa.me/554796253895?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Game%20Over%20Games." target="_blank" aria-label="Falar com a Game Over Games"><span>WhatsApp</span></a>
+
+  <div class="config-modal" id="configModal" aria-hidden="true">
+    <div class="config-box">
+      <button class="config-close" id="closeBuilder" aria-label="Fechar">×</button>
+      <span class="eyebrow">CONFIGURADOR RÁPIDO</span><h2>Seu PC em menos de 1 minuto.</h2>
+      <form id="pcForm">
+        <label>Orçamento aproximado<input name="orcamento" placeholder="Ex.: até R$ 5.000" required></label>
+        <label>Quais jogos você quer jogar?<input name="jogos" placeholder="Ex.: Valorant, GTA, Warzone" required></label>
+        <label>Precisa de monitor ou periféricos?<select name="perifericos"><option>Não</option><option>Sim, monitor</option><option>Sim, periféricos</option><option>Sim, setup completo</option></select></label>
+        <label>Prioridade<select name="prioridade"><option>Desempenho</option><option>Equilíbrio</option><option>Estética RGB</option></select></label>
+        <label>Vai fazer streaming?<select name="streaming"><option>Não</option><option>Sim</option><option>Talvez</option></select></label>
+        <label>Forma de pagamento<select name="pagamento"><option>À vista</option><option>Parcelado</option><option>Quero consultar</option></select></label>
+        <button class="btn" type="submit">Receber minha configuração no WhatsApp</button>
+      </form>
+    </div>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>
