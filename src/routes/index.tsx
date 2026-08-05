@@ -62,8 +62,8 @@ function Index() {
       <Header />
       <main>
         <Hero />
-        <Categories />
         <Showcase />
+        <Categories />
         <Trust />
         <PcBuilder />
         <ConsolesSection />
